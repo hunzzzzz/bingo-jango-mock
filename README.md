@@ -1,0 +1,1 @@
+# bingo-jango-mock
