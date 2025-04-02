@@ -4,6 +4,7 @@ plugins {
     id("org.springframework.boot") version "3.4.4"
     id("io.spring.dependency-management") version "1.1.7"
     kotlin("plugin.jpa") version "1.9.25"
+    kotlin("kapt") version "1.9.25"
 }
 
 group = "com.example"
@@ -19,14 +20,20 @@ repositories {
     mavenCentral()
 }
 
+extra["queryDslVersion"] = "5.0.0"
+
 dependencies {
     // database
     implementation("com.mysql:mysql-connector-j")
+    testImplementation("com.h2database:h2")
     // jpa
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     // kotlin
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
+    // queryDsl
+    implementation("com.querydsl:querydsl-jpa:${property("queryDslVersion")}:jakarta")
+    kapt("com.querydsl:querydsl-apt:${property("queryDslVersion")}:jakarta")
     // redis
     implementation("org.springframework.boot:spring-boot-starter-data-redis")
     // test

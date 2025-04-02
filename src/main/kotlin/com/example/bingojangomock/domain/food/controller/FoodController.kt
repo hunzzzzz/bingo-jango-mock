@@ -14,7 +14,8 @@ class FoodController(
         @PathVariable foodId: Long,
         @RequestParam count: Int
     ): ResponseEntity<Unit> {
-        val body = foodService.eat(foodId = foodId, count = count)
+        val userId = 100L // TODO
+        val body = foodService.eat(userId = userId, foodId = foodId, count = count)
 
         return ResponseEntity.ok(body)
     }
