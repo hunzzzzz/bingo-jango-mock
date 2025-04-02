@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository
 
 @Repository
 interface FoodHistoryCustomRepository {
-    fun getMostConsumedCategoryInWeek(
+    fun getMostConsumedCategory(
         userId: Long,
         timePeriod: TimePeriod
     ): Category?

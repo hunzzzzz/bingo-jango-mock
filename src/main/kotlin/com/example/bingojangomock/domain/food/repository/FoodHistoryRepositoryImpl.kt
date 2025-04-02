@@ -12,7 +12,7 @@ class FoodHistoryRepositoryImpl(
 ) : FoodHistoryCustomRepository {
     val foodHistory: QFoodHistory = QFoodHistory.foodHistory
 
-    override fun getMostConsumedCategoryInWeek(
+    override fun getMostConsumedCategory(
         userId: Long,
         timePeriod: TimePeriod
     ): Category? {

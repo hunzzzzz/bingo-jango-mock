@@ -3,7 +3,6 @@ package com.example.bingojangomock.domain.product.dto.response
 import com.example.bingojangomock.global.model.Category
 
 data class ProductResponse(
-    val message: String,
     val productId: Long,
     val category: Category,
     val name: String,
