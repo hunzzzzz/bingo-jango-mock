@@ -1,0 +1,29 @@
+spring:
+  # database
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+        show_sql: true
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: always
+  # redis
+  data:
+    redis:
+      host: ${SPRING_REDIS_HOST}
+      port: 6379
+
+host:
+  url:
+    food-service: http://food-service:8080
+    payment-service: http://payment-service:8080

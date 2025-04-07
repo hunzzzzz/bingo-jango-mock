@@ -1,0 +1,11 @@
+spring:
+  # redis
+  data:
+    redis:
+      port: 6379
+      host: redis
+
+jwt:
+  issuer: hunzz
+  secret:
+    key: c28gaSB3b24ndCBoZXNpdGF0ZSBubyBtb3JlIG5vIG1vcmUgaXQgY2Fubm90IHdhaXQgaSdtIHlvdXJz
